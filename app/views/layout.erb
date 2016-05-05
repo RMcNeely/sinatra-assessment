@@ -4,8 +4,8 @@
     <meta charset="utf-8">
     <title>C'Ville Beverage Tour Tracker</title>
 <!-- Styles -->
-    <link href="/css/bootstrap.css" rel="stylesheet">
-    <link href="/css/bootstrap-responsive.css" rel="stylesheet">
+    <link href="<%= url('/css/bootstrap.css') %>" rel="stylesheet">
+    <link href="<%= url('/css/bootstrap-responsive.css') %>" rel="stylesheet">
     <style>
         body {
         padding-top: 60px; /* When using the navbar-top-fixed */
@@ -23,14 +23,15 @@
         }
         body
         {
-        background-image:url('/img/escheresque_ste.png');
+        background-image:url(<%= '/public/background-1.jpg'%>);
         }
     </style>
 
 </head><!-- HEADER ENDS-->
 
 <body><!-- BODY START -->
-  <div background-color = 'gray'>
+  <img src="/public/background-1.jpg" alt="Welcome to the Blue Ridge Mountains and Charlottesville!"  />
+  <div background-color="gray">
     <h1>Loaded From Fancy Layout</h1>
   </div>
   <div class="header" id="dropdown">
