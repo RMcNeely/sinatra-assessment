@@ -25,11 +25,11 @@ ActiveRecord::Schema.define(version: 20160504044632) do
   end
 
   create_table "locations", force: :cascade do |t|
-    t.string  "name"
-    t.string  "address"
-    t.string  "phone_number"
-    t.string  "locations_email"
-    t.integer "rating"
+    t.string "name"
+    t.string "address"
+    t.string "phone_number"
+    t.string "locations_email"
+    t.float  "rating",          default: 0.0
   end
 
   create_table "users", force: :cascade do |t|

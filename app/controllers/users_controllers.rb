@@ -34,7 +34,7 @@ class UsersController < ApplicationController
       redirect '/home'
     else
       redirect '/error'
-
+    end
   end
 
 end

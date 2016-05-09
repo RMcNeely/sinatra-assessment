@@ -19,11 +19,11 @@ class ApplicationController < Sinatra::Base
     erb :error
   end
 
-#  post '/home' do
-#    session[:id] = User.create(params[:user])
-#    #binding.pry
-#    redirect '/'
-#  end
+  get '/rankings' do
+    @locations = Location.all
+    @locations.sort {|l| l.rating}.reverse
+    erb :rankings
+  end
 
   helpers do
     def logged_in?

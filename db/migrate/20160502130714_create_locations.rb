@@ -5,7 +5,7 @@ class CreateLocations < ActiveRecord::Migration
         t.string    :address
         t.string    :phone_number
         t.string    :locations_email
-        t.integer   :rating
+        t.float     :rating, default: 0
       end
   end
 end
