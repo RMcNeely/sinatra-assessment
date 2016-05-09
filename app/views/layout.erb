@@ -7,37 +7,47 @@
     <link href="<%= url('/css/bootstrap.css') %>" rel="stylesheet">
     <link href="<%= url('/css/bootstrap-responsive.css') %>" rel="stylesheet">
     <style>
+        header, section, footer {
+            display: block;
+          }
         body {
-        padding-top: 60px; /* When using the navbar-top-fixed */
-        }
+            padding-top: 60px; /* When using the navbar-top-fixed */
+          }
         .center {
-         float: none;
-         margin-left: auto;
-         margin-right: auto;
-        }
+            float: none;
+            margin-left: auto;
+            margin-right: auto;
+          }
         .centercontents {
-        text-align: center !important;
-        }
+            text-align: center !important;
+          }
         .alignrightcontents {
-        text-align: right !important;
-        }
-        body
-        {
-        background-image:url(<%= '/public/background-1.jpg'%>);
-        }
+            text-align: right !important;
+          }
+
     </style>
 
 </head><!-- HEADER ENDS-->
 
 <body><!-- BODY START -->
-  <img src="/public/background-1.jpg" alt="Welcome to the Blue Ridge Mountains and Charlottesville!"  />
-  <div background-color="gray">
-    <h1>Loaded From Fancy Layout</h1>
+
+  <header>
+    <nav>
+      <span><a href="/">Home</a></span>
+      <span><a href="#">Locations</a></span>
+      <span><a href="#">Drinks</a></span>
+      <span><a href="#">Favorites</a></span>
+      <span><a href="#">Top Ranked</a></span>
+    </nav>
+      <h1>Charlottesville Albermarle Beverage Tour</h1>
+  </header>
+  <div class="clearfix">
+    <%= yield %>
   </div>
-  <div class="header" id="dropdown">
-    <h1>Charlottesville Albermarle Beverage Tour</h1>
-  </div>
-<%= yield %>
+  <footer>
+    <section class="col-lg-4">
+      Developed and Maintained by Ryan McNeely
+    </section>
 
     <!-- jQuery via Google + local fallback, see h5bp.com -->
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
@@ -45,5 +55,6 @@
 
     <!-- Bootstrap jQuery Plugins, compiled and minified -->
     <script src="/js/bootstrap.min.js"></script>
+  </footer>
   </body><!-- BODY ENDS -->
 </html>

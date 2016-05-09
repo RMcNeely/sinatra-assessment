@@ -1,0 +1,27 @@
+<div class="container-fluid"> <!-- ONE DIVE TO RULE THEM ALL -->
+
+  <div class="row centercontents"><!-- Default Error Message -->
+    <h4>Ooops!</h4>
+    <p>
+      We're sorry, you shouldn't be seeing this page! Please Click on one of the links below to get back to where you were heading.
+    </p>
+  </div><!-- Default Error Message END-->
+
+  <div class="row centercontents"><!-- Customized Error Message -->
+    <% if @username_taken %>
+
+    <%= "It looks like that Username has already been taken."%>
+    <%= "Please return to Sign Up and try another."%>
+
+    <% else %>
+
+    <% end %>
+  </div><!-- Customized Error Message END -->
+
+  <div class="row centercontents"><!-- Links Back Div -->
+    <a href="/sign-up">Return to Sign Up</a>
+    <br><br>
+    <a href="/sign-in">Return to Sign In</a>
+  </div><!-- Links Back Div END-->
+
+</div><!-- ONE DIVE TO RULE THEM ALL END -->

@@ -17,7 +17,6 @@ aside,
 details,
 figcaption,
 figure,
-footer,
 header,
 hgroup,
 main,
@@ -26,6 +25,14 @@ nav,
 section,
 summary {
   display: block;
+}
+footer {
+  width: 100%;
+  margin: 25px auto 0px;
+  background-color: #1E252A;
+  height: 222px;
+  position: relative;
+  color: #fff;
 }
 audio,
 canvas,
@@ -113,9 +120,11 @@ input,
 optgroup,
 select,
 textarea {
-  margin: 0;
+  align-content: center;
+  margin: 0.25em;
   font: inherit;
   color: inherit;
+  width: 75%;
 }
 button {
   overflow: visible;

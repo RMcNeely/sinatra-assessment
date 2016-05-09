@@ -1,11 +1,43 @@
-<h2>Welcome to Albemarle County</h2>
-<div class="col-lg-1" background-color="blue">
-  <p>
-    Albermarle county and the city of Charlottesville might be best known as the home of Thomas Jefferson and the University of Virginia but there are many other places to visit too.  The Charlottesville area is home to amazing array vineyards in the Monticello Viticultural Area and a growing number of breweries.  We're blessed with so many in fact it can be hard to remember which ones you've visted, and which were your favorite.  Now you can keep track of them all, find and remember your favorites, and leave a review to let others know what you think!  Come on in and grab a class.
-  </p>
+<div class="col-lg-12"> <!-- One Div To Rule them all -->
 
-</div>
-<div class="col-xs-2">
-<a href="/sign_up">Sign Up</a><br>
-<a href="/sign_in">Sign In</a>
-</div>
+  <div class="row"><!-- Row 1 Div -->
+    <div class="col-lg-12"> <!-- Heading Div -->
+        <h2>Welcome to Albemarle County</h2>
+
+      <div class="col-lg-9" ><!-- Homepage Text div-->
+        <p>
+          Albermarle county and the city of Charlottesville might be best known as the home of Thomas Jefferson and the University of Virginia but there are many other places to visit too.  The Charlottesville area is home to amazing array vineyards in the Monticello Viticultural Area and a growing number of breweries.  We're blessed with so many in fact it can be hard to remember which ones you've visted, and which were your favorite.  Now you can keep track of them all, find and remember your favorites, and leave a review to let others know what you think!  Come on in and grab a glass.
+        </p>
+      </div><!-- Homepage Text div END-->
+      <div class="col-lg-3"><!-- User Div-->
+        <a href="/sign-up">Sign Up</a><br>
+        <a href="/sign-in">Sign In</a>
+      </div><!-- User Div END-->
+    </div><!-- Heading Div END -->
+  </div><!-- Row 1 Div END-->
+
+  <div class="row"><!-- Row 2 Div -->
+    <div class="col-lg-5"><!-- Locations Div -->
+        <h4>Destinations:</h4>
+          <% @locations.each do |location|%>
+          <ul>
+            <%= location.name %>
+          </ul>
+          <% end%>
+    </div><!-- Locations Div END -->
+
+    <div class="col-lg-7"><!-- Location Ratings Div -->
+      <h4>Rating:</h4>
+        <% @locations.each do |location|%>
+        <ul>
+          <% if location.rating %>
+          <%= location.rating%>
+          <% else %>
+          <%= "Not Yet Rated" %>
+          <% end %>
+        </ul>
+        <% end%>
+    </div><!-- Locations Div END -->
+  </div><!-- Row 2 Div END -->
+
+</div><!-- One Div To Rule them all END -->
