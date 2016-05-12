@@ -2,7 +2,7 @@
   <div class="">
     <h2><%= @location.name %></h2>
       <% if @location.rating%>
-        <%= @location.rating %><br>
+        Rating: <%= @location.rating %><br>
       <% else %>
         <p>
           This place isn't rated yet! <a href="/sign-in">Sign in</a> and be the first to leave a rating

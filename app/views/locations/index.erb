@@ -10,7 +10,7 @@
 
         <% @locations.each do |loc|%>
           <ul>
-            <h4><a href="/location/<%=loc.id%>"><li><%= loc.name %></li></a></h4>
+            <h4><a href="/location/<%=loc.slug%>"><li><%= loc.name %></li></a></h4>
               <%= loc.address %><br>
               <%= loc.phone_number %><br>
 
