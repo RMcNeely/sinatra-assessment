@@ -34,7 +34,10 @@ class UsersController < ApplicationController
       redirect '/home'
     else
       redirect '/error'
+<<<<<<< HEAD
 
+=======
+>>>>>>> 25d5437102a00ca0586e7dd4b5f3266b3ceb6d55
     end
   end
 end

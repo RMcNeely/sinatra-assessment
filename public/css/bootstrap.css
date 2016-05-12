@@ -30,8 +30,8 @@ footer {
   width: 100%;
   margin: 25px auto 0px;
   background-color: #1E252A;
-  height: 222px;
-  position: relative;
+  height: 60%;
+  position: absolute;
   color: #fff;
 }
 audio,
