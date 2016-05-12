@@ -35,6 +35,6 @@ class UsersController < ApplicationController
     else
       redirect '/error'
 
+    end
   end
-
 end

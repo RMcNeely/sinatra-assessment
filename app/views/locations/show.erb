@@ -1,0 +1,15 @@
+<div class="container-fluid"> <!-- ONE DIV TO RULE THEM ALL -->
+  <div class="">
+    <h2><%= @location.name %></h2>
+      <% if @location.rating%>
+        <%= @location.rating %><br>
+      <% else %>
+        <p>
+          This place isn't rated yet! <a href="/sign-in">Sign in</a> and be the first to leave a rating
+        </p>
+      <% end%>
+      <%= @location.address %><br>
+      <%= @location.phone_number %><br>
+      <%= @location.locations_email %><br>
+  </div>
+</div>
