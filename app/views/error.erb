@@ -13,8 +13,9 @@
     <%= "It looks like that Username has already been taken."%>
     <%= "Please return to Sign Up and try another."%>
 
-    <% else %>
-
+    <% else @not_logged_in %>
+    <%= "This page is only available to registered users." %>
+    <%= "Please sign in to view it, or sign up now" %>
     <% end %>
   </div><!-- Customized Error Message END -->
 

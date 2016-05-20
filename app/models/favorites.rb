@@ -1,7 +1,7 @@
 class Favorite < ActiveRecord::Base
 
   belongs_to  :user
-  has_many    :location
-  has_many    :drink
+  belongs_to  :location
+  belongs_to  :drink
 
 end

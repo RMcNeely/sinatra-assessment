@@ -1,0 +1,16 @@
+<div class="container-fluid"><!-- ONE DIV TO RULE THEM ALL -->
+
+  <div class="row">         <!-- Location Div -->
+
+    <div class="col-lg-1">  <!-- Just for spacing -->
+    </div>                  <!-- spacing div END -->
+
+    <div class="col-lg-10">
+      <% @locations.each do |l|%>
+          <h4><%= l.name %></h4>
+      <% end %>
+    </div>
+
+  </div>                  <!-- Location Div End -->
+
+</div><!-- ONE DIV TO RULE THEM ALL END -->

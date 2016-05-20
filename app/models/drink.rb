@@ -1,7 +1,7 @@
 class Drink < ActiveRecord::Base
 
-  validates_presence_of :name, :type
+  validates_presence_of :name, :description
 
-  belongs_to :location  
+  belongs_to :location
 
 end

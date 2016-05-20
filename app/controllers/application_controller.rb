@@ -6,6 +6,7 @@ class ApplicationController < Sinatra::Base
   set :views, 'app/views'
 
   get '/' do
+    binding.pry
     @locations = Location.all
     erb :home
   end
@@ -31,7 +32,7 @@ class ApplicationController < Sinatra::Base
     end
 
     def current_user
-      User.find(session[:id])
+      User.find_by_id(session[:id])
     end
   end
 end

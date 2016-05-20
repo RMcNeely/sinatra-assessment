@@ -1,0 +1,16 @@
+<div class="container-fluid"> <!-- ONE DIV TO RULE THEM ALL -->
+  <div class="col-lg-1"><!--buffer -->
+  </div>
+
+  <div class="col-lg-11">  <!--MAIN CONTENT -->
+    <h4>Master Drink List:</h4>
+    <ul>
+    <% @drinks.each do |d| %>
+      <li><%= d.name %></li>
+        <ul>
+          <li><%= d.description %></li>
+        </ul>
+    </ul>
+    <% end %>
+  </div><!-- MAIN CONTENT END -->
+</div><!-- ONE DIV TO RULE THEM ALL -->

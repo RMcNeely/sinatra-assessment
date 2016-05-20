@@ -9,7 +9,7 @@ class UsersController < ApplicationController
   end
 
   post '/sign-up' do
-    if !User.find(user_name: params[:user][:user_name])
+    if !User.find_by(user_name: params[:user][:user_name])
       user = User.new(params[:user])
     else
       @username_taken
@@ -28,12 +28,25 @@ class UsersController < ApplicationController
   end
 
   post '/sign-in' do
-    user = User.find(user_name: params[:user][:user_name])
+  #  binding.pry
+    user = User.find_by(user_name: params[:user][:user_name])
     if user && user.authenticate(params[:user][:password])
-      session[:id] = user
+     # user && user.authenticate(params[:password])
+      session[:id] = user.id
       redirect '/home'
     else
       redirect '/error'
+    end
+  end
+
+  get '/favorites' do
+    if logged_in?
+      binding.pry
+      @favorites = current_user.favorites
+      render :favorites
+    else
+      @not_logged_in
+      erb :error
     end
   end
 end
