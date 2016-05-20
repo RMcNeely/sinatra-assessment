@@ -1,6 +1,6 @@
-User.create(user_name: "Ryan", email: "rmcneely23@gmail.com", password_digest: "123test")
+@ryan = User.create(user_name: "Ryan", email: "rmcneely23@gmail.com", password_digest: "123test")
 
-User.create(user_name: "John Doe", email: "testing@email.com", password_digest: "123test321")
+@john_doe = User.create(user_name: "John Doe", email: "testing@email.com", password_digest: "123test321")
 
 Location.create(name: "Three Notch'd Brewing Company", address: "948 Grady Ave, Charlottesville, VA 22903", phone_number: "434-293-0610", rating: 5)
 
@@ -17,3 +17,9 @@ Location.create(name: "Blenheim Vineyards", address: "31 Blenheim Farm, Charlott
 Favorite.create(user_id: 1, location_id: 1)
 
 Favorite.create(user_id: 1, location_id: 6)
+
+@ryan.password = @ryan.password_digest
+@ryan.save
+
+@john_doe.password = @john_doe.password_digest
+@john_doe.save

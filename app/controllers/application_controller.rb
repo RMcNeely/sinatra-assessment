@@ -6,7 +6,7 @@ class ApplicationController < Sinatra::Base
   set :views, 'app/views'
 
   get '/' do
-    binding.pry
+    #binding.pry
     @locations = Location.all
     erb :home
   end

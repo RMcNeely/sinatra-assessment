@@ -4,6 +4,10 @@
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
 /*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
+#side-panel {
+  background-color: #DAE1E3;
+}
+
 html {
   font-family: sans-serif;
   -webkit-text-size-adjust: 100%;
@@ -22,10 +26,15 @@ hgroup,
 main,
 menu,
 nav,
-section,
 summary {
   display: block;
 }
+section {
+  margin-top: .75em;
+  width: auto;
+  text-align: center;
+}
+
 footer {
   width: 100%;
   margin: 25px auto 0px;

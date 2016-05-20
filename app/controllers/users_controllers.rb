@@ -23,17 +23,21 @@ class UsersController < ApplicationController
     if !logged_in?
       erb :sign_in
     else
-      redirect '/home'
+      redirect '/'
     end
   end
 
+  get '/sign-out' do
+    session.destroy
+    redirect'/'
+  end
+
   post '/sign-in' do
-  #  binding.pry
     user = User.find_by(user_name: params[:user][:user_name])
-    if user && user.authenticate(params[:user][:password])
+    if user && user.authenticate(params[:password])
      # user && user.authenticate(params[:password])
       session[:id] = user.id
-      redirect '/home'
+      redirect '/'
     else
       redirect '/error'
     end
@@ -41,9 +45,9 @@ class UsersController < ApplicationController
 
   get '/favorites' do
     if logged_in?
-      binding.pry
       @favorites = current_user.favorites
-      render :favorites
+  #    binding.pry
+      erb :favorites
     else
       @not_logged_in
       erb :error

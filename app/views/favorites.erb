@@ -5,11 +5,35 @@
     <div class="col-lg-1">  <!-- Just for spacing -->
     </div>                  <!-- spacing div END -->
 
-    <div class="col-lg-10">
-      <% @locations.each do |l|%>
-          <h4><%= l.name %></h4>
-      <% end %>
-    </div>
+    <div class="col-lg-10">  <!-- Main Content -->
+
+      <div class="row">     <!-- Main Content Header -->
+        <h3>Favorites: </h3>
+      </div>                <!-- Main Content Header END-->
+
+      <div class="row">     <!-- Main Content Info -->
+
+        <h5>Locations:</h5>
+        <ul>
+          <% current_user.locations.each do |l|%>
+            <li>
+              <p><%= l.name %></p>
+            </li>
+          <% end %>
+        </ul>
+
+        <h5>Drinks:</h5>
+        <ul>
+          <% current_user.drinks.each do |d|%>
+            <li>
+              <p><%= d.name %></p>
+            </li>
+          <% end %>
+        </ul>
+
+      </div>                  <!-- Main Content Info END -->
+
+    </div>                  <!-- Main Content END -->
 
   </div>                  <!-- Location Div End -->
 
