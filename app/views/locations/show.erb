@@ -1,7 +1,7 @@
 <div class="container-fluid"> <!-- ONE DIV TO RULE THEM ALL -->
   <div class="">
     <h2><%= @location.name %></h2>
-      <% if @location.rating%>
+      <% if @location.rating != 0%>
         Rating: <%= @location.rating %><br>
       <% else %>
         <p>

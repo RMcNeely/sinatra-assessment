@@ -7,7 +7,14 @@
 #side-panel {
   background-color: #DAE1E3;
 }
-
+/*
+nav span {
+  background-color: gray;
+  height: 3em;
+  width: auto;
+  text-align: center;
+}
+*/
 html {
   font-family: sans-serif;
   -webkit-text-size-adjust: 100%;
@@ -25,7 +32,6 @@ header,
 hgroup,
 main,
 menu,
-nav,
 summary {
   display: block;
 }

@@ -22,7 +22,7 @@ class ApplicationController < Sinatra::Base
 
   get '/rankings' do
     @locations = Location.all
-    @locations.sort {|l| l.rating}.reverse
+    #binding.pry
     erb :rankings
   end
 

@@ -10,8 +10,9 @@
         header, section, footer {
             display: block;
           }
+          /*
         body {
-            padding-top: 60px; /* When using the navbar-top-fixed */
+            padding-top: 30px;  When using the navbar-top-fixed */
           }
         .center {
             float: none;
@@ -27,24 +28,29 @@
 
     </style>
 
+    <header>
+      <nav role="navigation" class="navbar navbar-default navbar-top-fixed" >
+        <div class="navbar-header container-fluid">
+
+          <% logged_in? ? in_or_out = "Sign Out" : in_or_out = "Sign In"%>
+          <% logged_in? ? link = "/sign-out" : link = "/sign-in"%>
+          <ul class="nav navbar-nav">
+          <li><a href="/">Home</a></li>
+          <li><a href="/locations">Locations</a></li>
+          <li ><a href="/drinks">Drinks</a></li>
+          <li ><a href="/favorites">Favorites</a></li>
+          <li ><a href="/rankings">Top Ranked</a></li>
+          <li ><a href="/sign-up">Sign Up</a></li>
+          <li ><a href="<%= link %>"><%= "#{in_or_out}" %></a></li>
+        </ul>
+        </div>
+      </nav>
+    </header>
 </head><!-- HEADER ENDS-->
 
 <body><!-- BODY START -->
 
-  <header>
-    <navbar class="" id="navbar-height">
-      <% logged_in? ? in_or_out = "Sign Out" : in_or_out = "Sign In"%>
-      <% logged_in? ? link = "/sign-out" : link = "/sign-in"%>
-      <span><a href="/">Home</a></span>
-      <span><a href="/locations">Locations</a></span>
-      <span><a href="/drinks">Drinks</a></span>
-      <span><a href="/favorites">Favorites</a></span>
-      <span><a href="/#">Top Ranked</a></span>
-      <span><a href="/sign-up">Sign Up</a></span>
-      <span><a href="<%= link %>"><%= "#{in_or_out}" %></a></span>
-    </navbar>
       <h1>Charlottesville Albermarle Beverage Tour</h1>
-  </header>
   <div class="clearfix">
     <%= yield %>
   </div>
@@ -54,12 +60,13 @@
 
     <section class="col-lg-3">
       <p>
-        Find out more about visiting Albermarle County, Charlottesville and Monticello at <a href="https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=1&cad=rja&uact=8&ved=0ahUKEwiToPnn-ufMAhUD1h4KHeaNCt8QFggpMAA&url=http%3A%2F%2Fwww.visitcharlottesville.org%2F&usg=AFQjCNGqH7yxcH-13r11HdN-Mxm48Qrb-w&sig2=P2hoJnZrmP547Dm0Y7FdqA">visitcarlottesville.org</a>
+        Find out more about visiting Albermarle County, Charlottesville and Monticello at <a href="https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=1&cad=rja&uact=8&ved=0ahUKEwiToPnn-ufMAhUD1h4KHeaNCt8QFggpMAA&url=http%3A%2F%2Fwww.visitcharlottesville.org%2F&usg=AFQjCNGqH7yxcH-13r11HdN-Mxm48Qrb-w&sig2=P2hoJnZrmP547Dm0Y7FdqA">visitcarlottesville.org</a><br>
+        All locations and beverages are copyrights of their respective owners.
       </p>
     </section >
 
     <section class="col-lg-3">
-      <img src="<%= 'public/cville_logo_main.png' %>" alt="Visit Charlottesville" />
+      <img src="cville_logo_main.png" alt="Visit Charlottesville" />
     </section>
 
     <section class="centercontents col-lg-3">

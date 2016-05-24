@@ -6,9 +6,24 @@
     </div>                  <!-- spacing div END -->
 
     <div class="col-lg-10">
-      <% @locations.each do |l|%>
-          <h4><%= l.name %></h4>
-      <% end %>
+      <tbody>
+        <th>
+          <h2>Top Ranked Area Destinations:</h2>
+        </th>
+
+        <% @locations.sort {|a, b| a.rating <=> b.rating}.reverse.each do |l|%>
+        <tr>
+          <td><h5>
+            <a href="/location/<%=l.slug%>">
+            <%= l.name %></td><td>
+            </a>
+
+            </td>
+          <td><%= l.rating %></td>
+        </h5>
+        </tr>
+        <% end %>
+      </tbody>
     </div>
 
   </div>                  <!-- Location Div End -->
