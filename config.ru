@@ -7,5 +7,6 @@ end
 use Rack::MethodOverride
 use DrinksController
 use UsersController
+use FavoritesController
 use LocationsController
 run ApplicationController

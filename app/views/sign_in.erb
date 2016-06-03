@@ -1,4 +1,8 @@
 <div class="container-fluid"><!-- One Div To Rule them all -->
+
+  <% if @error_msg %></div><!-- One Div To Rule them all END -->
+    <%= @error_msg%>
+  <% end %>
   <div class="row centercontents form-group"> <!-- Div For Form-->
       <form action="/sign-in" method="post" class="has-success" class="has-error">
         <input type="user_name" name="user[user_name]" value="" placeholder="Username"><br>
@@ -9,4 +13,3 @@
 
 
   </div> <!-- Div For Form END-->
-</div><!-- One Div To Rule them all END -->

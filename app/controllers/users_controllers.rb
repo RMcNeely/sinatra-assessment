@@ -15,7 +15,8 @@ class UsersController < ApplicationController
       @username_taken
       redirect '/error'
     end
-    session[:id] = user.save
+    user.save
+    session[:id] = user.id
     redirect '/'
   end
 
@@ -39,18 +40,9 @@ class UsersController < ApplicationController
       session[:id] = user.id
       redirect '/'
     else
-      redirect '/error'
+      @error_msg = "Sonmething went wrong!"
+      erb :'sign_in'  # '/error'
     end
   end
 
-  get '/favorites' do
-    if logged_in?
-      @favorites = current_user.favorites
-  #    binding.pry
-      erb :favorites
-    else
-      @not_logged_in
-      erb :error
-    end
-  end
 end

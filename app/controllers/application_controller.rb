@@ -6,14 +6,9 @@ class ApplicationController < Sinatra::Base
   set :views, 'app/views'
 
   get '/' do
-    #binding.pry
+    binding.pry
     @locations = Location.all
     erb :home
-  end
-
-
-  get '/public/background-1' do
-
   end
 
   get '/error' do
