@@ -11,4 +11,14 @@ class FavoritesController < ApplicationController
     end
   end
 
+  get '/favorites/edit' do
+    @locations = Location.all
+    @drinks = Drink.all
+    erb :'favorites/edit'
+  end
+
+  post  '/favorites' do
+    
+  end
+
 end

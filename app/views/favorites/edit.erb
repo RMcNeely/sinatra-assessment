@@ -1,0 +1,23 @@
+<div class="containter-fluid"> <!-- ONE DIV TO RULE THEM ALL -->
+
+  <div class="container-fluid"> <!-- instruction div -->
+    <h4>Pick your favorites from the  master list below. Don't forget to add in a rating if you really like the place!</h4>
+  </div>  <!-- instruction div end -->
+
+  <div class="container-fluid"><!-- form div -->
+    <form action='/favorites' method="POST">
+
+    <h5>Locations:</h5>
+      <% @locations.each do |location|%>
+      <input type="checkbox" name="favorites[locations][]" id="<%= location.id %>" value="<%=location.id%>"><%=location.name%></input>
+      <% end %>
+
+    <h5>Drinks:</h5>
+      <% @drinks.each do |drink| %>
+      <input type="checkbox" name="favorites[drinks][]" id="<%= drink.id %>" value="<%=drink.id%>"><%=drink.name%></input>
+      <% end %>
+
+        <input type="submit" value="Update Favorites">
+      </form>
+  </div><!-- form div end -->
+</div><!-- ONE DIV TO RULE THEM ALL END -->
