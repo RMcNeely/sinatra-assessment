@@ -10,12 +10,11 @@ class UsersController < ApplicationController
 
   post '/sign-up' do
     if !User.find_by(user_name: params[:user][:user_name])
-      user = User.new(params[:user])
+      user = User.create(params[:user])
     else
       @username_taken
       redirect '/error'
     end
-    user.save
     session[:id] = user.id
     redirect '/'
   end
