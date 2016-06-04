@@ -6,7 +6,7 @@
     <h4>Master Drink List:</h4>
     <ul>
     <% @drinks.each do |d| %>
-      <li><%= d.name %></li>
+      <li><strong><%= d.name %></strong> by <%= d.crafted_by %></li>
         <ul>
           <li><%= d.description %></li>
         </ul>
