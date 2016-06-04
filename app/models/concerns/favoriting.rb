@@ -7,14 +7,19 @@ module Favoriting
     @faves
   end
 
-  def update_favorites
-    @favs
-    #binding.pry
-    if !self.faves[:favorites]["#{self.name.downcase.pluralize.to_sym}"].empty?
-      self.faves[:favorites]["#{self.name.downcase.pluralize.to_sym}"].each do |x|
-        current_user.favorites << self.find_by_id(x)
+  def update_favorites(params, current_user)
+    binding.pry
+    if !params[:favorites]["#{self.name.downcase.pluralize.to_sym}"].empty?
+      params[:favorites]["#{self.name.downcase.pluralize.to_sym}"].each do |x|
+        binding.pry
+        current_user.favorites << Favorite.create("#{self.id}" => self.find_by_id(x), :user_id => current_user)
       end
     end
   end
 
 end
+
+
+#sql = <- SQL
+#  SELECT ID ? from TABLE ?
+#SQL
