@@ -18,8 +18,11 @@ class FavoritesController < ApplicationController
   end
 
   post  '/favorites' do
-    Drink.update_favorites(params, current_user)
-    Location.update_favorites(params, current_user)
+#    binding.pry
+    unless  params.empty?
+      Drink.update_favorites(params, current_user)
+      Location.update_favorites(params, current_user)
+    end
     redirect '/favorites'
   end
 

@@ -1,23 +1,43 @@
 <div class="containter-fluid"> <!-- ONE DIV TO RULE THEM ALL -->
 
   <div class="container-fluid"> <!-- instruction div -->
-    <h4>Pick your favorites from the  master list below. Don't forget to add in a rating if you really like the place!</h4>
+    <h3>Pick your favorites from the  master list below.</h3>
   </div>  <!-- instruction div end -->
 
-  <div class="container-fluid"><!-- form div -->
+  <div class="container-fluid"><!-- add favorites form div -->
     <form action='/favorites' method="POST">
 
-    <h5>Locations:</h5>
+    <h4>Locations:</h4>
       <% @locations.each do |location|%>
       <input type="checkbox" name="favorites[locations][]" id="<%= location.id %>" value="<%=location.id%>"><%=location.name%></input>
       <% end %>
 
-    <h5>Drinks:</h5>
+    <h4>Drinks:</h4>
       <% @drinks.each do |drink| %>
       <input type="checkbox" name="favorites[drinks][]" id="<%= drink.id %>" value="<%=drink.id%>"><%=drink.name%></input>
       <% end %>
 
         <input type="submit" value="Update Favorites">
       </form>
-  </div><!-- form div end -->
+  </div><!-- add favorites form div end -->
+
+  <div class="container-fluid"> <!-- delete favorites form -->
+    <h3>Had a bad time at one of your favorites? You can remove any by clicking on it here:</h3>
+
+    <h4>Locations:</h4>
+      <form action='/favorites' method="POST">
+      <% @locations.each do |location|%>
+      <input type="checkbox" name="remove_favorites[locations][]" id="<%= location.id %>" value="<%=location.id%>"><%=location.name%></input>
+      <% end %>
+
+    <h4>Drinks:</h4>
+      <% @drinks.each do |drink| %>
+      <input type="checkbox" name="remove_favorites[drinks][]" id="<%= drink.id %>" value="<%=drink.id%>"><%=drink.name%></input>
+      <% end %>
+
+        <input type="submit" value="Remove From Favorites">
+      </form>
+
+  </div> <!-- delete favorites form end -->
+
 </div><!-- ONE DIV TO RULE THEM ALL END -->
