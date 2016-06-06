@@ -1,6 +1,6 @@
 class Drink < ActiveRecord::Base
 
-  extend Favoriting
+  extend Favoritable
 
   validates_presence_of :name, :description
 

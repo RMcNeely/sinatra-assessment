@@ -3,7 +3,7 @@ class Location < ActiveRecord::Base
   validates_presence_of :name
   has_many :drinks
 
-  extend Favoriting
+  extend Favoritable
 
   def slug
     self.name.downcase.split(" ").join("-")

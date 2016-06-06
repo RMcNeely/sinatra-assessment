@@ -20,10 +20,6 @@ class FavoritesController < ApplicationController
   post  '/favorites' do
     Drink.update_favorites(params, current_user)
     Location.update_favorites(params, current_user)
-  #  binding.pry
-  #  current_user.drinks.update_favorites(params, current_user)
-  #  current_user.location.update_favorites(params, current_user)
-  #  binding.pry
     redirect '/favorites'
   end
 
