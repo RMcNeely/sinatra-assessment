@@ -6,9 +6,6 @@ gem 'sinatra-bootstrap', :require => 'sinatra/bootstrap'
 
 
 gem 'sinatra'
-gem 'sqlite3'
-gem 'tux'
-gem 'pry'
 gem 'pry-nav'
 gem 'rake'
 gem 'bcrypt'
@@ -18,10 +15,16 @@ gem 'database_cleaner', git: 'https://github.com/bmabey/database_cleaner.git'
 gem 'require_all'
 
 
-group :development do
+group :development, :test do
   gem "sqlite3"
   gem "pry"
   gem "shotgun"
   gem "tux"
   gem "capybara"
+end
+
+group :production do
+  gem 'puma'
+  gem 'pg'
+  gem 'rails_12factor'
 end
