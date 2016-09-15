@@ -1,4 +1,5 @@
 require './config/environment'
+require 'puma'
 
 if ActiveRecord::Migrator.needs_migration?
   raise 'Migrations are pending. Run `rake db:migrate` to resolve the issue.'
@@ -9,4 +10,5 @@ use DrinksController
 use UsersController
 use FavoritesController
 use LocationsController
-run ApplicationController
+use ApplicationController
+run Sinatra::Application
